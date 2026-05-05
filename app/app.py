@@ -27,10 +27,8 @@ def database_info():
 
 @app.route('/api-key')
 def api_key_info():
-    # Simulando uso de API Key
     api_key = os.getenv('EXTERNAL_API_KEY', 'KEY_NAO_CONFIGURADA')
 
-    # Mascarando a chave
     if len(api_key) > 8:
         masked_key = api_key[:4] + "*" * (len(api_key) - 8) + api_key[-4:]
     else:
